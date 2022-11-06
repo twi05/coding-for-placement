@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "*.js": "javascriptreact",
+        "functional": "cpp",
+        "complex": "cpp",
+        "chrono": "cpp",
+        "ostream": "cpp"
+    }
+}
