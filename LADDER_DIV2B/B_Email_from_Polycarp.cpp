@@ -7,50 +7,75 @@ int main()
     cin >> t;
     while (t--)
     {
-        bool flag = false;
-        string s;
-        string t;
+        string s, t;
         cin >> s >> t;
-
-        ll i = 0, j = 0;
-        char currs = s[0];
-        char currt = t[0];
-        char nexts = ' ', nextt = ' ';
-        while (s[i] && t[i])
+        stack<pair<char, int>> sstack, tstack;
+        pair<char, int> temp;
+        for (int i = 0; i < s.size(); i++)
         {
-            while (s[i])
+            if (sstack.empty())
+                sstack.push({s[i], 1});
+            else
             {
-                if (currs == s[i])
-                    i++;
-                else
+                if (sstack.top().first == s[i])
                 {
-                    nexts = s[i];
-                    currs = s[i];
-                    break;
+                    temp = sstack.top();
+                    sstack.pop();
+                    temp.second++;
+                    sstack.push(temp);
+                    continue;
                 }
-            }
-            while (t[i])
-            {
-                if (currt == t[i])
-                    i++;
                 else
-                {
-                    nextt = t[i];
-                    currt = t[i];
-                    break;
-                }
+                    sstack.push({s[i], 1});
             }
+        }
+        for (int i = 0; i < t.size(); i++)
+        {
+            if (tstack.empty())
+                tstack.push({t[i], 1});
+            else
             {
-                if (currs != currt || nexts != nextt)
+                if (tstack.top().first == t[i])
+                {
+                    temp = tstack.top();
+                    tstack.pop();
+                    temp.second++;
+                    tstack.push(temp);
+                    continue;
+                }
+                else
+                    tstack.push({t[i], 1});
+            }
+        }
+        bool flag = false;
+        while (!sstack.empty() && !tstack.empty())
+        {
+            if (sstack.top().first == tstack.top().first)
+            {
+                if (sstack.top().second > tstack.top().second)
                 {
                     cout << "NO" << endl;
                     flag = true;
                     break;
                 }
+                sstack.pop();
+                tstack.pop();
+            }
+            else
+            {
+                cout << "NO" << endl;
+                flag = true;
+                break;
             }
         }
+
         if (!flag)
-            cout << "YES" << endl;
+        {
+            if (sstack.empty() && tstack.empty())
+                cout << "YES" << endl;
+            else
+                cout << "NO" << endl;
+        }
     }
     return 0;
 }
