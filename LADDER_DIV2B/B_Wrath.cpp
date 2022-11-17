@@ -23,3 +23,5 @@ int main()
     cout << n - kill;
     return 0;
 }
+
+
