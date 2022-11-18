@@ -21,7 +21,7 @@ int main()
             {
                 for (ll j = l2-1; j < r2; j++)
                 {
-                    bitset<64> b1(v[i]);
+                    bitset<64> b1(v[i6]);
                     bitset<64> b2(v[j]);
 
                     b1 ^= b2;
