@@ -8,6 +8,7 @@
         "shared_mutex": "cpp",
         "sstream": "cpp",
         "thread": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "vector": "cpp"
     }
 }
