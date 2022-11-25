@@ -13,7 +13,7 @@ bool helper(vector<vector<char>> &board, string word, int i, int row, int col)
     temp = board[row][col];
     board[row][col] = '*';
 
-    bool ans = helper(board, word, i+1, row + 1, col) || helper(board, word, i+1, row - 1, col) || helper(board, word, i+1, row, col - 1) || helper(board, word, i+1, row, col + 1);
+    bool ans = helper(board, word, i + 1, row + 1, col) || helper(board, word, i + 1, row - 1, col) || helper(board, word, i + 1, row, col - 1) || helper(board, word, i + 1, row, col + 1);
 
     board[row][col] = temp;
     return ans;
