@@ -13,31 +13,25 @@ int main()
             cin >> v[i];
         ll count = 0;
         bool flag = false;
+        ll inc = 0, dec = 0;
 
-        for (ll i = 1; i < n - 2; i++)
+        for (ll i = 1; i < n; i++)
         {
-            if (v[i - 1] > v[i] && v[i] < v[i + 1])
-                count++;
-
-            if (count > 1)
+            if (v[i] > v[i - 1])
+                inc++;
+            else if (v[i] < v[i - 1])
             {
-                flag = true;
-                break;
+                dec++;
+                if (inc > 0)
+                 {   flag = true;
+                break;}
             }
         }
-        if (n > 1 && v[0] < v[1])
-            count++;
-        if (n > 1 && v[n - 2] > v[n - 1])
-            count++;
-        if (count > 1)
-        {
-            flag = true;
-        }
-        if (!flag || n == 1 || count <= 1)
-            cout << "YES";
-        else
-            cout << "NO";
-        cout << endl;
+            if (!flag)
+                cout << "YES";
+            else
+                cout << "NO";
+            cout << endl;
     }
     return 0;
 }
