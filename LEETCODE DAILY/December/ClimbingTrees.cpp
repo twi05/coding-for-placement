@@ -13,7 +13,7 @@ int helper(int n)
     if (n < 0)
         return 0;
 
-    if (v[n] != 0)place
+    if (v[n] != 0)
         return v[n];
 
    return v[n] = helper(n - 1) + helper(n - 2);
