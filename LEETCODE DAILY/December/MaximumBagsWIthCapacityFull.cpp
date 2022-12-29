@@ -26,7 +26,7 @@ int maximumBags(vector<int> &capacity, vector<int> &rocks, int additionalRocks)
     sort(begin(capacity), end(capacity));
 
     for (auto it : capacity)
-    {o1
+    {
         if (it == 0)
         {
             cnt++;

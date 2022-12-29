@@ -5,3 +5,4 @@ Possible Bipartition
 Sum of Distances in Tree
 BestTimetoBuyandSellStockwithCooldown
 Domino and Trimino Tiling
+Single Threaded CPU
