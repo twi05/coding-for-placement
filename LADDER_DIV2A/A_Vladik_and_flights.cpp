@@ -3,44 +3,16 @@ using namespace std;
 typedef long long ll;
 int main()
 {
-    ll n, a, b;
-    cin >> n >> a >> b;
+    ll n, start, end;
+    cin >> n >> start >> end;
     string s;
-a--;
-b--;
     cin >> s;
+    start--;
+    end--;
 
-    ll mini = LLONG_MAX;
-
-    // for (char c : s)
-    // {
-    //     ll f = c - '0' ;
-    //     mini = min(f + mini, mini);
-    //     mini = min(f, mini);
-    // }
-    ll i, count = 0, lastocc;
-    if (a <= b)
-    {
-        lastocc = s[a];
-        for (i = b; i >= a; i--)
-        {
-            if (s[i] == lastocc)
-                break;
-        }
-        cout << abs(b - i);
-    }
-
-    if (b < a)
-    {
-        lastocc = s[b];
-        for (i = a; i <= b; i++)
-        {
-            if (s[i] == lastocc)
-                break;
-        }
-        cout << abs(a - i);
-    }
-
-
+    if (s[start] == s[end])
+        cout << "0";
+    else
+        cout << "1";
     return 0;
 }
